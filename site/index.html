@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261117-2" />
+  <link rel="stylesheet" href="styles.css?v=20261117-home" />
 </head>
 <body>
   <div class="app-shell">
@@ -32,11 +32,17 @@
       </header>
       <div class="view-container">
         <section id="view-dashboard" class="view active-view">
-          <div class="hero-banner"><div class="hero-grid"></div><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> MOBILE SUIT DATABASE // UC 0087</div><h1>นักบินพร้อม<br><span>ออกปฏิบัติการ</span></h1><p>สร้างนักบินและโมบิลสูทของคุณ<br>แล้วเตรียมตัวเข้าสู่สนามรบ</p><button class="primary-btn" data-action="create-character">＋ สร้างนักบิน <span>→</span></button></div><div class="hero-visual"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><div class="hero-crosshair">✣</div><div class="hero-mech">M</div><div class="hero-visual-label">MOBILE SUIT<br><b>MS-23 MESSER</b><br><span>AEUG // FIELD UNIT</span></div></div><div class="hero-index">01 <span>/ 04</span></div></div>
-          <div class="section-heading"><div><div class="eyebrow muted">PERSONAL DATABASE</div><h2>คลังข้อมูลของคุณ</h2></div><span class="heading-line"></span></div>
-          <div class="stats-row"><article class="stat-card"><div class="stat-top"><span>นักบินทั้งหมด</span><span class="stat-icon pilot-icon">◉</span></div><div class="stat-value" id="dashPilotCount">00</div><div class="stat-foot">PILOT PROFILES</div></article><article class="stat-card"><div class="stat-top"><span>โมบิลสูททั้งหมด</span><span class="stat-icon suit-icon">⬡</span></div><div class="stat-value" id="dashSuitCount">00</div><div class="stat-foot">MOBILE SUIT UNITS</div></article><article class="stat-card accent-card"><div class="stat-top"><span>แต้มสร้างตัวละคร</span><span class="stat-icon">✣</span></div><div class="stat-value">17<span class="stat-unit"> PTS</span></div><div class="stat-foot">STARTING ALLOCATION</div></article></div>
-          <div class="section-heading recent-heading"><div><div class="eyebrow muted">YOUR UNITS</div><h2>รายการล่าสุด</h2></div><button class="text-btn" data-view="total">ดูทั้งหมด <span>→</span></button></div>
-          <div class="recent-grid" id="recentGrid"></div>
+          <div class="creation-hub-heading"><div class="eyebrow muted">PERSONAL LOADOUT // UC 0087</div><h1>เตรียมตัว <span>ออกปฏิบัติการ</span></h1><p>ผู้เล่นหนึ่งคนสร้างตัวละครและ Mobile Suit ได้อย่างละ 1 รายการ</p></div>
+          <div class="creation-grid">
+            <button class="creation-card character-create-card" type="button" data-action="create-character">
+              <span class="creation-card-visual character-visual"><span class="creation-visual-id">01 // PERSONNEL</span><span class="character-radar"><span>✣</span></span><span class="creation-visual-caption">PILOT PROFILE // CHARACTER SHEET</span></span>
+              <span class="creation-card-copy"><span class="creation-card-kicker">CREATE // PILOT</span><strong>สร้างตัวละคร</strong><small>กำหนดนักบินและค่าสถานะ Character Sheet ของคุณ</small><span class="creation-card-state" id="pilotHomeState">ยังไม่มีตัวละคร · สร้างได้ 1 รายการ</span><span class="creation-card-action" id="pilotHomeAction">＋ เริ่มสร้างตัวละคร <b>→</b></span></span>
+            </button>
+            <button class="creation-card suit-create-card" type="button" data-action="create-suit">
+              <span class="creation-card-visual suit-visual"><span class="creation-visual-id">02 // MOBILE SUIT</span><img src="Messer_Profile.webp" alt=""><span class="creation-visual-caption">MS-23 MESSER // CONFIGURATION</span></span>
+              <span class="creation-card-copy"><span class="creation-card-kicker">CREATE // MOBILE SUIT</span><strong>สร้าง Mobile Suit</strong><small>เลือก Messer configuration แล้วจัดแต้ม ARMOR, ENGINE และอาวุธ</small><span class="creation-card-state" id="suitHomeState">ยังไม่มี Mobile Suit · สร้างได้ 1 รายการ</span><span class="creation-card-action" id="suitHomeAction">＋ เริ่มสร้าง Mobile Suit <b>→</b></span></span>
+            </button>
+          </div>
         </section>
 
         <section id="view-characters" class="view"><div class="page-title-row"><div><div class="eyebrow muted">PILOT DATABASE // PERSONNEL</div><h1>นักบิน <span>ของคุณ</span></h1></div><button class="primary-btn" data-action="create-character">＋ สร้างนักบิน</button></div><div id="characterList" class="record-grid"></div></section>
@@ -50,7 +56,7 @@
   <div id="modalRoot"></div>
   <div id="toast" class="toast" role="status"></div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261117-home"></script>
 </body>
 </html>
 
