@@ -73,3 +73,18 @@
 .modal-suit .point-summary{padding:11px 14px}
 @media(max-width:1050px){.modal-suit .modal-body{padding:12px 16px}.modal-suit .suit-custom-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:16px}.modal-suit .suit-custom-hero{height:calc(100dvh - 118px);min-height:400px}.modal-suit .model-options{grid-template-columns:repeat(2,minmax(0,1fr))}.modal-suit .weapon-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.modal-backdrop:has(.modal-suit){padding:0}.modal-suit{height:100dvh;max-height:100dvh;width:100vw;grid-template-rows:auto minmax(0,1fr) auto}.modal-suit .modal-head{min-height:50px;padding:8px 14px}.modal-suit .modal-body{padding:10px 12px}.modal-suit .modal-actions{min-height:52px;padding:8px 12px}.modal-suit .suit-custom-layout{grid-template-columns:1fr;gap:12px}.modal-suit .suit-custom-hero{position:relative;height:34dvh;min-height:230px;max-height:330px}.modal-suit .suit-custom-hero-info{padding:8px 12px}.modal-suit .suit-custom-hero-info strong{font-size:20px}.modal-suit .suit-custom-controls{padding:0}.modal-suit #suitForm .form-grid{grid-template-columns:1fr 1fr;gap:9px}.modal-suit #suitForm .field.full{grid-column:1/-1}.modal-suit #suitForm .field:not(.full){grid-column:span 1}.modal-suit .model-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.modal-suit .model-option{display:flex;flex-direction:column;align-items:stretch;justify-content:start;min-height:110px;padding:5px}.modal-suit .model-image{height:66px;width:100%;margin:0 0 5px}.modal-suit .model-option strong{font-size:10px}.modal-suit .model-option small{font-size:7px}.modal-suit .weapon-options{grid-template-columns:1fr;gap:6px}.modal-suit .weapon-option{grid-template-columns:18px 40px minmax(0,1fr);min-height:70px;padding:8px}.modal-suit .weapon-icon{width:40px;height:40px}.modal-suit .weapon-icon svg{width:32px;height:32px}.modal-suit .weapon-option b{font-size:12px}.modal-suit .weapon-option small{font-size:8px}.modal-suit .point-summary{padding:8px 10px}}
+
+/* Weapon cards communicate selection with glow and muted idle state */
+.modal-suit .weapon-option{position:relative;grid-template-columns:48px minmax(0,1fr);gap:12px;cursor:pointer;transition:background .18s,border-color .18s,box-shadow .18s,opacity .18s,filter .18s}
+.modal-suit .weapon-option input{position:absolute;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+.modal-suit .weapon-option:not(:has(input:checked)):not(.locked){color:#7f8da0;border-color:#263445;background:#0a111b;filter:saturate(.28);opacity:.68}
+.modal-suit .weapon-option:not(:has(input:checked)):not(.locked) b{color:#8995a7}
+.modal-suit .weapon-option:not(:has(input:checked)):not(.locked) small{color:#68778b}
+.modal-suit .weapon-option:not(:has(input:checked)):not(.locked) .weapon-icon{color:#718196;border-color:#29384a;background:#0c1420;box-shadow:none}
+.modal-suit .weapon-option:has(input:checked){color:#e8f8ff;border-color:#4bdce9;background:linear-gradient(110deg,rgba(41,139,161,.25),rgba(13,29,43,.98));box-shadow:0 0 0 1px #4bdce955,0 0 18px #42dce833,inset 0 0 24px #42dce817;filter:none;opacity:1}
+.modal-suit .weapon-option:has(input:checked) b{color:#f0fbff}
+.modal-suit .weapon-option:has(input:checked) .weapon-icon{color:#8bf5ff;border-color:#53dfeb;background:linear-gradient(145deg,#174456,#0c1c2a);box-shadow:0 0 16px #45dce755,inset 0 0 12px #45dce722}
+.modal-suit .weapon-option:has(input:focus-visible){outline:2px solid #c4fbff;outline-offset:2px}
+.modal-suit .weapon-option.locked{cursor:not-allowed;filter:grayscale(.75);opacity:.34}
+@media(max-width:700px){.modal-suit .weapon-option{grid-template-columns:40px minmax(0,1fr);gap:9px}}
+
