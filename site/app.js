@@ -38,6 +38,32 @@
     $('#suitHomeState').textContent=suit?'บันทึกแล้ว · '+model(suit.model).name:'ยังไม่มี Mobile Suit · สร้างได้ 1 รายการ';
     $('#pilotHomeAction').textContent=pilot?'แก้ไขตัวละคร  →':'＋ เริ่มสร้างตัวละคร  →';
     $('#suitHomeAction').textContent=suit?'แก้ไข Mobile Suit  →':'＋ เริ่มสร้าง Mobile Suit  →';
+    const characterVisual = $('.character-visual');
+    if (characterVisual) {
+      let portrait = characterVisual.querySelector('.character-card-image');
+      const radar = characterVisual.querySelector('.character-radar');
+      const caption = characterVisual.querySelector('.creation-visual-caption');
+      if (pilot && pilot.image) {
+        if (radar) radar.remove();
+        if (!portrait) {
+          portrait = document.createElement('img');
+          portrait.className = 'character-card-image';
+          characterVisual.insertBefore(portrait, caption);
+        }
+        portrait.src = pilot.image;
+        portrait.alt = 'ภาพตัวละคร ' + pilot.name;
+      } else {
+        if (portrait) portrait.remove();
+        if (!radar) {
+          const fallback = document.createElement('span');
+          fallback.className = 'character-radar';
+          const mark = document.createElement('span');
+          mark.textContent = '✣';
+          fallback.appendChild(mark);
+          characterVisual.insertBefore(fallback, caption);
+        }
+      }
+    }
     document.querySelectorAll('[data-action="create-character"]').forEach(b=>{if(!b.querySelector('.creation-card-action'))b.textContent=pilot?'แก้ไขตัวละคร':'＋ สร้างนักบิน'});
     document.querySelectorAll('[data-action="create-suit"]').forEach(b=>{if(!b.querySelector('.creation-card-action'))b.textContent=suit?'แก้ไข Mobile Suit':'＋ สร้างโมบิลสูท'});
     fillTotalSelectors();renderTotal();
