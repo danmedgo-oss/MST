@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261118-home-total" />
+  <link rel="stylesheet" href="styles.css?v=20261118-admin" />
 </head>
 <body>
   <div class="app-shell">
@@ -25,7 +25,7 @@
     <main class="main-content">
       <header class="topbar">
         <div class="breadcrumb"><span>ARCHIVE</span><span class="crumb-slash">/</span><strong id="crumbCurrent">OVERVIEW</strong></div>
-        <div class="top-actions"><span class="top-status"><i></i> SYSTEM NORMAL</span><button class="avatar" title="Pilot profile">P</button></div>
+        <div class="top-actions"><span class="top-status"><i></i> SYSTEM NORMAL</span><button class="avatar admin-trigger" id="adminTrigger" type="button" title="Admin" aria-label="เปิดหน้า Admin">ADM</button></div>
       </header>
       <div class="view-container">
         <section id="view-dashboard" class="view active-view">
@@ -43,7 +43,7 @@
           <section class="home-total" aria-labelledby="homeTotalTitle">
             <div class="home-total-head">
               <div><div class="eyebrow muted">COMBAT READOUT // TOTAL SHEET</div><h2 id="homeTotalTitle">สถานะการรบ <span>ของคุณ</span></h2></div>
-              <div class="total-toolbar"><div class="total-selects"><label>นักบิน<select id="totalPilot"></select></label><label>โมบิลสูท<select id="totalSuit"></select></label></div><button class="primary-btn" id="exportTotal" type="button">⇩ Export PNG</button></div>
+              <div class="total-toolbar"><button class="small-btn" id="exportPlayerData" type="button">ส่งข้อมูลให้ Admin · JSON</button><button class="primary-btn" id="exportTotal" type="button">⇩ Export PNG</button></div>
             </div>
             <div id="totalSheet" class="total-sheet"></div>
           </section>
@@ -60,7 +60,7 @@
   <div id="modalRoot"></div>
   <div id="toast" class="toast" role="status"></div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=20261118-home-total"></script>
+  <script src="app.js?v=20261118-admin"></script>
 </body>
 </html>
 
