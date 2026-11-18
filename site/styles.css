@@ -210,3 +210,27 @@
 .admin-stats b{color:#5ee1e9}
 @media(max-width:700px){.admin-modal{width:100vw;height:100dvh;max-height:100dvh}.modal-backdrop:has(.admin-modal){padding:0}.admin-modal .modal-head{min-height:56px;padding:10px 16px}.admin-modal .modal-head h2{font-size:20px}.admin-modal .modal-body{padding:15px}.admin-record{padding:12px}.admin-record-grid{grid-template-columns:1fr;gap:14px}.admin-record-head{font-size:9px}.admin-toolbar>*{flex:1;justify-content:center;text-align:center}.admin-notice p{font-size:11px}}
 
+/* Mobile Suit action economy and opportunity attacks */
+.rules-layout{align-items:start}
+.rules-aside-stack{display:grid;gap:16px;align-content:start;min-width:0}
+.economy-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.economy-card{min-width:0;border:1px solid #2b3c52;background:linear-gradient(155deg,#111d2b,#0c1521);padding:15px}
+.economy-card.economy-primary{border-color:#315464;background:linear-gradient(155deg,#112331,#0c1521)}
+.economy-kicker{color:#5bdce6;font:10px var(--mono);letter-spacing:1px}
+.economy-card h3{margin:7px 0 10px;color:#e9f1fb;font:700 18px/1.2 var(--thai)}
+.economy-card ul,.opportunity-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.economy-card li,.opportunity-list li{position:relative;padding-left:13px;color:#9eafc3;font-size:12px;line-height:1.6}
+.economy-card li:before,.opportunity-list li:before{content:'›';position:absolute;left:0;color:var(--cyan);font:700 15px var(--display)}
+.economy-card li b{color:#d9e6f5}
+.economy-card p,.opportunity-intro{color:#9eafc3;font-size:12px;line-height:1.7;margin:0 0 10px}
+.economy-card .economy-note{border-top:1px solid #26384d;padding-top:9px;color:#e2b98d}
+.opportunity-card h2{font-size:28px;line-height:1.05}
+.opportunity-card h3{margin:18px 0 10px;color:#cdd9e9;font-size:14px}
+.opportunity-rule{display:grid;gap:4px;border-top:1px solid #26384d;padding:11px 0}
+.opportunity-rule b{color:#5ddbe5;font:10px var(--mono);letter-spacing:.5px}
+.opportunity-rule span{color:#a5b4c7;font-size:12px;line-height:1.7}
+.opportunity-list li{font-size:11px}
+@media(max-width:1050px){.economy-grid{grid-template-columns:minmax(0,1.25fr) repeat(2,minmax(0,1fr))}.economy-card{padding:12px}}
+@media(max-width:900px){.rules-aside-stack{grid-template-columns:1.2fr .8fr}}
+@media(max-width:700px){.economy-grid,.rules-aside-stack{grid-template-columns:1fr}.economy-card{padding:14px}.economy-card h3{font-size:17px}.economy-card li,.economy-card p,.opportunity-rule span{font-size:12px}.opportunity-list li{font-size:11px}}
+
