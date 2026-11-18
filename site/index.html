@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261118-pilot-fullscreen" />
+  <link rel="stylesheet" href="styles.css?v=20261118-home-total" />
 </head>
 <body>
   <div class="app-shell">
@@ -17,9 +17,6 @@
       <div class="nav-label">MAIN SYSTEM</div>
       <nav class="main-nav" aria-label="เมนูหลัก">
         <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span> ภาพรวม <span class="nav-dot"></span></button>
-        <button class="nav-item" data-view="characters"><span class="nav-icon">◉</span> นักบิน <span class="nav-count" id="pilotCount">00</span></button>
-        <button class="nav-item" data-view="suits"><span class="nav-icon">⬡</span> โมบิลสูท <span class="nav-count" id="suitCount">00</span></button>
-        <button class="nav-item" data-view="total"><span class="nav-icon">▤</span> Total Sheet</button>
         <button class="nav-item" data-view="rules"><span class="nav-icon">⌘</span> กติกาการเล่น</button>
       </nav>
       <div class="sidebar-bottom"><div class="signal"><span class="signal-led"></span><span>LOCAL ARCHIVE ONLINE</span></div><div class="version">SYSTEM // v1.0.0<br>UC 0087 • FIELD TEST</div></div>
@@ -43,11 +40,18 @@
               <span class="creation-card-copy"><span class="creation-card-kicker">CREATE // MOBILE SUIT</span><strong>สร้าง Mobile Suit</strong><small>เลือก Messer configuration แล้วจัดแต้ม ARMOR, ENGINE และอาวุธ</small><span class="creation-card-state" id="suitHomeState">ยังไม่มี Mobile Suit · สร้างได้ 1 รายการ</span><span class="creation-card-action" id="suitHomeAction">＋ เริ่มสร้าง Mobile Suit <b>→</b></span></span>
             </button>
           </div>
+          <section class="home-total" aria-labelledby="homeTotalTitle">
+            <div class="home-total-head">
+              <div><div class="eyebrow muted">COMBAT READOUT // TOTAL SHEET</div><h2 id="homeTotalTitle">สถานะการรบ <span>ของคุณ</span></h2></div>
+              <div class="total-toolbar"><div class="total-selects"><label>นักบิน<select id="totalPilot"></select></label><label>โมบิลสูท<select id="totalSuit"></select></label></div><button class="primary-btn" id="exportTotal" type="button">⇩ Export PNG</button></div>
+            </div>
+            <div id="totalSheet" class="total-sheet"></div>
+          </section>
         </section>
 
         <section id="view-characters" class="view"><div class="page-title-row"><div><div class="eyebrow muted">PILOT DATABASE // PERSONNEL</div><h1>นักบิน <span>ของคุณ</span></h1></div><button class="primary-btn" data-action="create-character">＋ สร้างนักบิน</button></div><div id="characterList" class="record-grid"></div></section>
         <section id="view-suits" class="view"><div class="page-title-row"><div><div class="eyebrow muted">MOBILE SUIT DATABASE // MECHANIC</div><h1>โมบิลสูท <span>ของคุณ</span></h1></div><button class="primary-btn" data-action="create-suit">＋ สร้างโมบิลสูท</button></div><div id="suitList" class="record-grid suit-record-grid"></div></section>
-        <section id="view-total" class="view"><div class="page-title-row"><div><div class="eyebrow muted">COMBAT READOUT // TOTAL</div><h1>สถานะ <span>การรบ</span></h1></div><div class="total-toolbar"><div class="total-selects"><label>นักบิน<select id="totalPilot"></select></label><label>โมบิลสูท<select id="totalSuit"></select></label></div><button class="primary-btn" id="exportTotal" type="button">⇩ Export PNG</button></div></div><div id="totalSheet" class="total-sheet"></div></section>
+        
         <section id="view-rules" class="view"><div class="page-title-row"><div><div class="eyebrow muted">FIELD MANUAL // PLAYTEST RULES</div><h1>กติกา <span>การเล่น</span></h1></div><div class="playtest-tag">PLAYTEST // v0.1</div></div><div class="rules-layout"><article class="rules-main"><div class="rule-intro"><span class="rule-number">01</span><div><h2>พื้นฐานการทอยเต๋า</h2><p>ใช้ D&amp;D 5e เป็นโครงหลัก ปรับคำเรียกและอุปกรณ์ให้เข้ากับสงครามระหว่างอวกาศ</p></div></div><div class="rule-block"><h3><span>▸</span> การทดสอบความสามารถ</h3><p>ทอย <b>d20 + โบนัสที่เกี่ยวข้อง</b> ให้ได้ผลรวมเท่ากับหรือสูงกว่า DC ที่กำหนด การโจมตีใช้ d20 + ACC เทียบกับ AC ของเป้าหมาย</p></div><div class="rule-block"><h3><span>▸</span> เทิร์นการต่อสู้</h3><p>ในหนึ่งเทิร์น ผู้เล่นเคลื่อนที่ได้ตามค่า ENGINE และใช้ 1 แอ็กชันเพื่อโจมตี ใช้อุปกรณ์ หรือทำภารกิจพิเศษ การโจมตีระยะประชิดต้องอยู่ในระยะอาวุธ</p></div><div class="rule-block"><h3><span>▸</span> ความเสียหายและพลังชีวิต</h3><p>เมื่อการโจมตีโดน ให้ทอยลูกเต๋าความเสียหายของอาวุธ หักค่าป้องกันของเป้าหมายตามกติกาภารกิจ เมื่อ HP เหลือ 0 โมบิลสูทหยุดปฏิบัติการ</p></div><div class="rule-block"><h3><span>▸</span> อาวุธพิเศษ</h3><p>Smoke Charge สร้างพื้นที่ควันรัศมี 2 ช่อง ผู้ที่โจมตีเข้า/ออกจากควันได้รับ +2 AC ส่วน Wire-Guided Remote Weapon ต้องมี NEW มากกว่า 3</p></div></article><aside class="formula-card"><div class="eyebrow">PROPOSED FORMULAS</div><h2>สูตรคำนวณ<br>สำหรับทดสอบ</h2><div class="formula-row"><span>HP</span><b>10 + (2 × CON) + (2 × ARMOR)</b></div><div class="formula-row"><span>ENGINE</span><b>2 + ENGINE points <small>สูงสุด 6 ช่อง</small></b></div><div class="formula-row"><span>AC</span><b>6 + STR <small>ต่ำสุด 6 / สูงสุด 13</small></b></div><div class="formula-row"><span>ACC</span><b>⌊(DEX + 1) ÷ 3⌋ <small>โบนัส +1 ถึง +3</small></b></div><div class="formula-note">สูตรเหล่านี้เป็นค่าเริ่มต้นสำหรับ playtest สามารถปรับสมดุลระหว่างการทดสอบได้</div></aside></div></section>
       </div>
       <footer class="app-footer"><span>GUNDAM // PILOT ARCHIVE</span><span>DATABASE MODE: <b id="dbMode">LOCAL</b></span><span>© FIELD TEST ARCHIVE 0087</span></footer>
@@ -56,7 +60,7 @@
   <div id="modalRoot"></div>
   <div id="toast" class="toast" role="status"></div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=20261118-pilot-fullscreen"></script>
+  <script src="app.js?v=20261118-home-total"></script>
 </body>
 </html>
 

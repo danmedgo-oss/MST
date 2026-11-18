@@ -31,7 +31,7 @@
   function go(view){document.querySelectorAll('.view').forEach(e=>e.classList.toggle('active-view',e.id===`view-${view}`));document.querySelectorAll('.nav-item').forEach(e=>e.classList.toggle('active',e.dataset.view===view));const map={dashboard:'OVERVIEW',characters:'PILOT DATABASE',suits:'MOBILE SUIT DATABASE',total:'COMBAT READOUT',rules:'FIELD MANUAL'};$('#crumbCurrent').textContent=map[view]||'OVERVIEW';render();window.scrollTo({top:0,behavior:'smooth'})}
   function render(){
     const pilot=pilots[0],suit=suits[0];
-    $('#pilotCount').textContent=String(pilots.length).padStart(2,'0');$('#suitCount').textContent=String(suits.length).padStart(2,'0');
+    
     $('#characterList').innerHTML=pilots.length?pilots.map(p=>pilotCard(p)).join(''):'<div class="empty-state"><strong>ยังไม่มีข้อมูลนักบิน</strong>สร้าง Character Sheet เพื่อเริ่มต้นฐานข้อมูลของคุณ</div>';
     $('#suitList').innerHTML=suits.length?suits.map(s=>suitCard(s)).join(''):'<div class="empty-state"><strong>ยังไม่มีข้อมูลโมบิลสูท</strong>เลือก Messer configuration และปรับแต่งหุ่นของคุณ</div>';
     $('#pilotHomeState').textContent=pilot?'บันทึกแล้ว · '+pilot.name:'ยังไม่มีตัวละคร · สร้างได้ 1 รายการ';
