@@ -36,6 +36,12 @@
     $('#suitList').innerHTML=suits.length?suits.map(s=>suitCard(s)).join(''):'<div class="empty-state"><strong>ยังไม่มีข้อมูลโมบิลสูท</strong>เลือก Messer configuration และปรับแต่งหุ่นของคุณ</div>';
     $('#pilotHomeState').textContent=pilot?'บันทึกแล้ว · '+pilot.name:'ยังไม่มีตัวละคร · สร้างได้ 1 รายการ';
     $('#suitHomeState').textContent=suit?'บันทึกแล้ว · '+model(suit.model).name:'ยังไม่มี Mobile Suit · สร้างได้ 1 รายการ';
+    const suitHomeImage = $('#suitHomeImage');
+    if (suitHomeImage) {
+      const selectedModel = suit ? model(suit.model) : SUIT_TYPES[0];
+      suitHomeImage.src = selectedModel.image;
+      suitHomeImage.alt = selectedModel.name;
+    }
     $('#pilotHomeAction').textContent=pilot?'แก้ไขตัวละคร  →':'＋ เริ่มสร้างตัวละคร  →';
     $('#suitHomeAction').textContent=suit?'แก้ไข Mobile Suit  →':'＋ เริ่มสร้าง Mobile Suit  →';
     const characterVisual = $('.character-visual');

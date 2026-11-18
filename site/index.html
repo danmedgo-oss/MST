@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261118-character-image" />
+  <link rel="stylesheet" href="styles.css?v=20261118-suit-selected-image" />
 </head>
 <body>
   <div class="app-shell">
@@ -39,7 +39,7 @@
               <span class="creation-card-copy"><span class="creation-card-kicker">CREATE // PILOT</span><strong>สร้างตัวละคร</strong><small>กำหนดนักบินและค่าสถานะ Character Sheet ของคุณ</small><span class="creation-card-state" id="pilotHomeState">ยังไม่มีตัวละคร · สร้างได้ 1 รายการ</span><span class="creation-card-action" id="pilotHomeAction">＋ เริ่มสร้างตัวละคร <b>→</b></span></span>
             </button>
             <button class="creation-card suit-create-card" type="button" data-action="create-suit">
-              <span class="creation-card-visual suit-visual"><span class="creation-visual-id">02 // MOBILE SUIT</span><img src="Messer_Profile.webp" alt=""><span class="creation-visual-caption">MS-23 MESSER // CONFIGURATION</span></span>
+              <span class="creation-card-visual suit-visual"><span class="creation-visual-id">02 // MOBILE SUIT</span><img id="suitHomeImage" src="Messer_Profile.webp" alt="Messer Type-F01"><span class="creation-visual-caption">MS-23 MESSER // CONFIGURATION</span></span>
               <span class="creation-card-copy"><span class="creation-card-kicker">CREATE // MOBILE SUIT</span><strong>สร้าง Mobile Suit</strong><small>เลือก Messer configuration แล้วจัดแต้ม ARMOR, ENGINE และอาวุธ</small><span class="creation-card-state" id="suitHomeState">ยังไม่มี Mobile Suit · สร้างได้ 1 รายการ</span><span class="creation-card-action" id="suitHomeAction">＋ เริ่มสร้าง Mobile Suit <b>→</b></span></span>
             </button>
           </div>
@@ -56,7 +56,7 @@
   <div id="modalRoot"></div>
   <div id="toast" class="toast" role="status"></div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" crossorigin="anonymous"></script>
-  <script src="app.js?v=20261118-character-image"></script>
+  <script src="app.js?v=20261118-suit-selected-image"></script>
 </body>
 </html>
 
