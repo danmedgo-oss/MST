@@ -234,3 +234,64 @@
 @media(max-width:900px){.rules-aside-stack{grid-template-columns:1.2fr .8fr}}
 @media(max-width:700px){.economy-grid,.rules-aside-stack{grid-template-columns:1fr}.economy-card{padding:14px}.economy-card h3{font-size:1.1875rem}.economy-card li,.economy-card p,.opportunity-rule span{font-size:0.875rem}.opportunity-list li{font-size:0.8125rem}}
 
+/* MS data console inspired by the supplied unit profile reference */
+.ms-data-layout{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:1rem;align-items:stretch}
+.ms-showcase{position:relative;isolation:isolate;min-width:0;min-height:45rem;overflow:hidden;border:1px solid #53677f;background:radial-gradient(ellipse at 58% 35%,#435975 0,#283d57 38%,#162536 78%,#111a26 100%)}
+.ms-showcase:before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(187,208,228,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(187,208,228,.09) 1px,transparent 1px);background-size:3rem 3rem;mask-image:linear-gradient(180deg,#000,transparent 92%)}
+.ms-showcase:after{content:'';position:absolute;inset:35% 0 0;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent 10%,rgba(8,13,23,.12) 48%,rgba(8,13,23,.94) 100%)}
+.ms-showcase-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center 38%;padding:.75rem .5rem 9.5rem;filter:drop-shadow(0 1rem 1.2rem rgba(0,0,0,.48))}
+.ms-showcase-head{position:absolute;z-index:1;top:1.25rem;left:1.4rem;right:1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:#eff7ff;font:1.125rem var(--mono);letter-spacing:.14em}
+.ms-showcase-head b{color:#c5d4e5;font:0.75rem var(--mono);letter-spacing:.08em}
+.ms-showcase-reticle{position:absolute;z-index:1;right:1.6rem;top:5rem;color:#72e7f0;font-size:1.75rem;text-shadow:0 0 1rem #48d9e8}
+.ms-status-table{position:absolute;z-index:1;left:1.25rem;bottom:7.3rem;width:min(65%,25rem);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;padding:1px;background:rgba(206,223,240,.35);border:1px solid rgba(206,223,240,.35)}
+.ms-status-table>div{min-height:2.15rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.35rem .55rem;background:rgba(10,18,28,.88)}
+.ms-status-table span{color:#a9c2da;font:0.75rem var(--mono);letter-spacing:.045em}
+.ms-status-table b{color:#edf8ff;font:700 1rem var(--mono);white-space:nowrap}
+.ms-showcase-title{position:absolute;z-index:1;left:1.25rem;right:1.25rem;bottom:1rem;text-shadow:0 1px 4px #000}
+.ms-showcase-title small{color:#7ce3eb;font:0.75rem var(--mono);letter-spacing:.1em}
+.ms-showcase-title h2{margin:.25rem 0;font:700 2.25rem/1.05 var(--display);color:#f2f6fc}
+.ms-showcase-title p{margin:0;color:#c2d0df;font-size:0.875rem}
+.ms-data-console{display:grid;grid-template-rows:auto auto auto 1fr;gap:.8rem;min-width:0}
+.ms-console-panel{min-width:0;border:1px solid #465b72;background:linear-gradient(145deg,rgba(15,25,38,.97),rgba(9,16,26,.98));box-shadow:0 .3rem 1rem rgba(0,0,0,.16)}
+.ms-console-panel>header{min-height:3.8rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.7rem .9rem;border-bottom:1px solid #33475e;background:linear-gradient(90deg,#1a2a3c,#111c29)}
+.ms-console-panel>header h3{margin:.18rem 0 0;color:#edf5ff;font-size:1.125rem;line-height:1.25}
+.ms-console-panel>header>b{color:#8fa8c1;font:0.75rem var(--mono);letter-spacing:.07em;text-align:right}
+.ms-console-kicker{color:#71dce6;font:0.75rem var(--mono);letter-spacing:.12em}
+.ms-weapon-list{padding:.55rem .65rem .7rem}
+.ms-weapon-columns{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(4,minmax(3rem,.55fr));gap:.4rem;padding:.2rem .35rem .45rem .6rem;color:#8298af;font:0.75rem var(--mono);letter-spacing:.055em}
+.ms-weapon-columns span:not(:first-child){text-align:center}
+.ms-weapon-row{display:grid;grid-template-columns:2.75rem minmax(7rem,1.45fr) repeat(4,minmax(3rem,.55fr));gap:.4rem;align-items:center;min-height:4.1rem;padding:.35rem .4rem;border-top:1px solid #2b3d52;background:rgba(18,31,47,.7)}
+.ms-weapon-row:nth-child(even){background:rgba(25,42,61,.6)}
+.ms-weapon-icon{width:2.5rem;height:2.5rem;display:grid;place-items:center;border:1px solid #52718b;background:#21364b;color:#62dfea}
+.ms-weapon-icon svg{width:2rem;height:2rem}
+.ms-weapon-name{min-width:0;display:grid;gap:.18rem}
+.ms-weapon-name b{color:#e9f1fa;font-size:0.875rem;line-height:1.3;overflow-wrap:anywhere}
+.ms-weapon-name small{color:#94a9bf;font-size:0.75rem;line-height:1.25}
+.ms-weapon-value{display:grid;justify-items:center;gap:.12rem;min-width:0}
+.ms-weapon-value small{color:#8198b0;font:0.75rem var(--mono);letter-spacing:.04em}
+.ms-weapon-value b{color:#e8f6ff;font:700 0.875rem var(--mono);text-align:center;overflow-wrap:anywhere}
+.ms-empty{padding:1.2rem;color:#96a9bd;font-size:0.875rem;text-align:center}
+.ms-empty.compact{padding:.8rem 1rem}
+.ms-option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;padding:.75rem}
+.ms-option-row{display:grid;grid-template-columns:2.5rem minmax(0,1fr) auto;align-items:center;gap:.6rem;min-height:4rem;padding:.5rem .6rem;border:1px solid #334a60;background:#122132}
+.ms-option-icon{width:2.25rem;height:2.25rem;display:grid;place-items:center;border:1px solid #47667d;color:#72e7f0;font-size:1.25rem}
+.ms-option-row>span:nth-child(2){display:grid;gap:.18rem;min-width:0}
+.ms-option-row b{color:#e6f0fb;font-size:0.8125rem}
+.ms-option-row small{color:#9aadc0;font-size:0.75rem}
+.ms-option-row strong{color:#76e7ef;font:700 1.25rem var(--mono)}
+.ms-ability-list{display:grid;gap:.45rem;padding:.75rem}
+.ms-ability-list>div{display:grid;gap:.2rem;padding:.55rem .7rem;border-left:2px solid #55d7e3;background:#132234}
+.ms-ability-list b{color:#edf4fc;font-size:0.875rem}
+.ms-ability-list small{color:#a2b2c5;font-size:0.75rem;line-height:1.5}
+.ms-pilot-content{display:grid;grid-template-columns:minmax(8rem,10rem) 1fr;align-items:center;gap:.8rem;padding:.75rem}
+.ms-pilot-radar svg{display:block;width:100%;height:auto}
+.ms-pilot-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem .65rem}
+.ms-pilot-data>strong,.ms-pilot-data>small{grid-column:1/-1;overflow-wrap:anywhere}
+.ms-pilot-data>strong{color:#eff6ff;font-size:1rem}
+.ms-pilot-data>small{margin-top:-.25rem;color:#96acc2;font-size:.75rem}
+.ms-pilot-data>div:not(.ms-record-actions){display:flex;justify-content:space-between;gap:.4rem;padding:.25rem .45rem;background:#111f2d;color:#a8b9cb;font:0.75rem var(--mono)}
+.ms-pilot-data>div:not(.ms-record-actions) b{color:#6de0e8}
+.ms-record-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.25rem}
+@media(max-width:1100px){.ms-data-layout{grid-template-columns:minmax(0,1fr)}.ms-showcase{min-height:41.25rem}.ms-showcase-art{object-position:center 35%}.ms-data-console{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto}.ms-armory{grid-column:1/-1;grid-row:1}.ms-pilot-link{grid-column:1/-1}}
+@media(max-width:700px){.ms-data-layout{gap:.7rem}.ms-showcase{min-height:37.5rem}.ms-showcase-art{padding:.5rem .25rem 11rem;object-position:center 34%}.ms-showcase-head{top:.8rem;left:.8rem;right:.8rem;font-size:.875rem}.ms-showcase-head b{font-size:.75rem}.ms-showcase-reticle{right:.8rem;top:3.6rem}.ms-status-table{left:.65rem;bottom:7.7rem;width:min(78%,23rem)}.ms-status-table>div{min-height:1.9rem;padding:.25rem .4rem}.ms-status-table span{font-size:.75rem}.ms-status-table b{font-size:.8125rem}.ms-showcase-title{left:.75rem;right:.75rem;bottom:.75rem}.ms-showcase-title h2{font-size:1.875rem}.ms-showcase-title small{font-size:.75rem}.ms-showcase-title p{font-size:.75rem}.ms-data-console{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}.ms-armory,.ms-pilot-link{grid-column:auto;grid-row:auto}.ms-console-panel>header{min-height:3.3rem;padding:.55rem .7rem}.ms-console-panel>header h3{font-size:1rem}.ms-weapon-columns{display:none}.ms-weapon-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem .3rem;padding:.55rem .45rem}.ms-weapon-icon{grid-column:1;grid-row:1;width:2.4rem;height:2.4rem}.ms-weapon-name{grid-column:2/5;grid-row:1}.ms-weapon-value{padding-top:.3rem;border-top:1px solid #30445a}.ms-weapon-value small{font-size:.75rem}.ms-weapon-value b{font-size:.75rem}.ms-option-grid{grid-template-columns:1fr}.ms-pilot-content{grid-template-columns:7.5rem minmax(0,1fr);gap:.5rem;padding:.55rem}.ms-pilot-data{gap:.3rem}.ms-record-actions .small-btn{flex:1;justify-content:center}}
+
