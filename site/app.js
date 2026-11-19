@@ -108,7 +108,7 @@
   const labels = ATTRS.map(([key], i) => {
     const a = angle(i), p = coord(r + 20, i);
     const anchor = Math.cos(a) < -.3 ? 'end' : (Math.cos(a) > .3 ? 'start' : 'middle');
-    return '<text x="' + p[0].toFixed(1) + '" y="' + p[1].toFixed(1) + '" text-anchor="' + anchor + '" fill="#91a9c2" font-size="9" font-family="monospace" font-weight="600">' + key + '</text>';
+    return '<text x="' + p[0].toFixed(1) + '" y="' + p[1].toFixed(1) + '" text-anchor="' + anchor + '" fill="#91a9c2" font-size="12" font-family="monospace" font-weight="600">' + key + '</text>';
   }).join('');
   const values = vals.map((v, i) => point(r * v / 7, i)).join(' ');
   const markers = vals.map((v, i) => {
