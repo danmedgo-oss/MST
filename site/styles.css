@@ -568,3 +568,20 @@ button:disabled,[aria-disabled="true"],.weapon-option.locked{cursor:not-allowed}
 button:disabled:hover{transform:none;filter:none;box-shadow:none}
 @media(prefers-reduced-motion:reduce){button,[role="button"],a.nav-item,.weapon-option:not(.locked){transition:none!important;scroll-behavior:auto!important}}
 
+/* Pilot status glyphs and explicit Mobile Suit base-stat comparison */
+.pilot-attribute-icon{font-size:0}
+.pilot-attribute-icon svg{display:block;width:1.45rem;height:1.45rem;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.suit-model-help{margin:0;padding:.5rem .7rem .1rem;color:#d1dce3;font-size:.8125rem;line-height:1.5}
+.suit-profile-panel .model-options{align-items:stretch}
+.modal-suit .suit-profile-panel .model-option{display:grid;grid-template-columns:minmax(4.2rem,.68fr) minmax(0,1fr);align-items:center;gap:.55rem;min-height:8.4rem;padding:.5rem;text-align:left}
+.modal-suit .suit-profile-panel .model-option .model-image{grid-column:1;grid-row:1;width:100%;height:5.2rem;margin:0;background:linear-gradient(135deg,#45535d,#252f38)}
+.model-option-info{display:grid;align-content:center;gap:.2rem;min-width:0}
+.modal-suit .model-option-info>strong{font-size:.875rem;line-height:1.2}
+.modal-suit .model-option-info>small{font-size:.75rem;line-height:1.3}
+.model-option-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.3rem;margin-top:.15rem}
+.model-option-stats>span{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.2rem .32rem;padding:.2rem .3rem;border:1px solid #6c7f8b;background:rgba(22,33,42,.72)}
+.model-option-stats b{grid-row:1/3;color:#f3f6f8;font:700 1rem var(--mono)}
+.model-option-stats small{color:#c4d3dc;font:0.75rem var(--mono);line-height:1.2}
+.model-option-info>em{margin-top:.12rem;color:#a9dcff;font-size:.75rem;font-style:normal;line-height:1.3}
+@media(max-width:700px){.modal-suit .suit-profile-panel .model-options{grid-template-columns:1fr}.modal-suit .suit-profile-panel .model-option{grid-template-columns:5rem minmax(0,1fr);min-height:7rem}.modal-suit .suit-profile-panel .model-option .model-image{height:5.5rem}.modal-suit .model-option-info>strong{font-size:.9375rem}.model-option-stats{max-width:20rem}}
+
