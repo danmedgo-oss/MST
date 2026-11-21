@@ -553,3 +553,18 @@ button:focus-visible,.nav-item:focus-visible{outline-color:#8bd5ff}
 @media(max-width:1100px){.ms-data-layout{grid-template-columns:minmax(0,1fr)}.ms-showcase{min-height:41.25rem}.ms-showcase-art{object-position:center 35%}.ms-data-console{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto}.ms-armory{grid-column:1/-1;grid-row:1}.ms-pilot-link{grid-column:1/-1}}
 @media(max-width:700px){.ms-data-layout{gap:.7rem}.ms-showcase{min-height:37.5rem}.ms-showcase-art{padding:.5rem .25rem 11rem;object-position:center 34%}.ms-showcase-head{top:.8rem;left:.8rem;right:.8rem;font-size:.875rem}.ms-showcase-head b{font-size:.75rem}.ms-showcase-reticle{right:.8rem;top:3.6rem}.ms-status-table{left:.65rem;bottom:7.7rem;width:min(78%,23rem)}.ms-status-table>div{min-height:1.9rem;padding:.25rem .4rem}.ms-status-table span{font-size:.75rem}.ms-status-table b{font-size:.8125rem}.ms-showcase-title{left:.75rem;right:.75rem;bottom:.75rem}.ms-showcase-title h2{font-size:1.875rem}.ms-showcase-title small{font-size:.75rem}.ms-showcase-title p{font-size:.75rem}.ms-data-console{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}.ms-armory,.ms-pilot-link{grid-column:auto;grid-row:auto}.ms-console-panel>header{min-height:3.3rem;padding:.55rem .7rem}.ms-console-panel>header h3{font-size:1rem}.ms-weapon-columns{display:none}.ms-weapon-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem .3rem;padding:.55rem .45rem}.ms-weapon-icon{grid-column:1;grid-row:1;width:2.4rem;height:2.4rem}.ms-weapon-name{grid-column:2/5;grid-row:1}.ms-weapon-value{padding-top:.3rem;border-top:1px solid #30445a}.ms-weapon-value small{font-size:.75rem}.ms-weapon-value b{font-size:.75rem}.ms-option-grid{grid-template-columns:1fr}.ms-pilot-content{grid-template-columns:7.5rem minmax(0,1fr);gap:.5rem;padding:.55rem}.ms-pilot-data{gap:.3rem}.ms-record-actions .small-btn{flex:1;justify-content:center}}
 
+/* Consistent hover, keyboard-focus and press feedback across the interface */
+button,[role="button"],a.nav-item,.weapon-option:not(.locked){transition:transform .16s cubic-bezier(.2,.8,.2,1),box-shadow .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease,filter .16s ease}
+@media (hover:hover) and (pointer:fine){
+  button:not(:disabled):not([aria-disabled="true"]):hover,[role="button"]:not([aria-disabled="true"]):hover,a.nav-item:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 0 0 1px rgba(145,211,255,.32),0 6px 16px rgba(4,11,18,.32)}
+  .weapon-option:not(.locked):hover{transform:translateY(-1px);filter:brightness(1.1);border-color:#90d5ff;box-shadow:0 0 0 1px rgba(145,211,255,.38),0 0 14px rgba(74,164,225,.28)}
+  .modal-suit .weapon-option:not(:has(input:checked)):not(.locked):hover{filter:saturate(.28) brightness(1.12)}
+  .modal-suit .weapon-option:has(input:checked):hover{filter:brightness(1.12);box-shadow:0 0 0 1px #b7e6ff,0 0 18px #52b3fa88,inset 0 0 18px #c4eaff30}
+  button.modal-close:not(:disabled):hover{transform:rotate(90deg) scale(1.08)}
+}
+button:not(:disabled):not([aria-disabled="true"]):active,[role="button"]:not([aria-disabled="true"]):active,a.nav-item:active{transform:translateY(0) scale(.98);filter:brightness(.96)}
+button:focus-visible,[role="button"]:focus-visible,a.nav-item:focus-visible,.modal-suit .weapon-option:has(input:focus-visible){outline:2px solid #b6e5ff;outline-offset:3px;box-shadow:0 0 0 4px rgba(75,161,224,.2)}
+button:disabled,[aria-disabled="true"],.weapon-option.locked{cursor:not-allowed}
+button:disabled:hover{transform:none;filter:none;box-shadow:none}
+@media(prefers-reduced-motion:reduce){button,[role="button"],a.nav-item,.weapon-option:not(.locked){transition:none!important;scroll-behavior:auto!important}}
+
