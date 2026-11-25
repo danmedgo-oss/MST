@@ -609,3 +609,5 @@ button:disabled:hover{transform:none;filter:none;box-shadow:none}
 .model-option-stats .base-stat-icon svg{display:block;width:1rem;height:1rem}
 .model-option-stats b{grid-row:1;grid-column:2;align-self:center;font-size:1.1rem}
 .model-option-stats small{grid-row:2;grid-column:1/-1;text-align:center;font-size:.6875rem}
+
+.campaign-title{color:#a8dcff;font-size:clamp(.65rem,.82vw,.82rem);letter-spacing:.08em;line-height:1.5;overflow-wrap:anywhere}
